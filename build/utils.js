@@ -82,17 +82,17 @@ exports.setPages = configs => {
       filePath.lastIndexOf(".")
     );
     let tmp = filePath.substring(0, filePath.lastIndexOf("/"));
-
     let conf = {
       // page 的入口
       entry: filePath,
       // 模板来源
-      template: tmp + ".html",
+      template: `${tmp}/${filename}.html`,
       // 在 dist/index.html 的输出
       filename: filename + ".html",
       // 页面模板需要加对应的js脚本，如果不加这行则每个页面都会引入所有的js脚本
       // chunks: ["chunk-vendors", "chunk-common", filename],
-      inject: true
+      inject: true,
+      isDev: process.env.NODE_ENV === "development"
     };
 
     if (configs) {

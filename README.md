@@ -8,6 +8,12 @@
 npm install
 ```
 
+### Provide means to split bundles in a way that can drastically improve build time performance.
+
+```
+npm run dll
+```
+
 ### Compiles and hot-reloads for development
 
 ```
